@@ -23,26 +23,26 @@ The project contains 5 steps to comply:
 * Run: 
 ``` [R]source('run_analysis.R');run_analysis("*filename*")```
 
-*filename: It's the name of the txt file with resulting dataset*
+*filename: It's the name of the text file with resulting dataset*
 
 ## run_analysis.R STRUCTURE
 The file contains the following functions:
 ### get_and_join_files
-This function receives the path of the txt files of observations, activities( labels and literals) and subjects of one of the folders(TRAIN or TEST) and return a dataset with all the data joined. 
+This function receives the path of the text files of observations, activities( labels and literals) and subjects of one of the folders(TRAIN or TEST) and return a dataset with all the data joined. 
 The function:
-1. Stores every file in its corresponding dataframe
-2. Checks that the number of rows of every one of them is correct. If it wasn'tm it returns a message error and does not allow to continue.
+1. Stores every file in its corresponding data-frame
+2. Checks that the number of rows of every one of them is correct. If it wasn't, it returns a message error and does not allow to continue.
 3. Changes the label id by the literal of every activity(see step 3 of **GOAL** section)
 4. Merges the 3 datasets in only one. The order of the columns are Subject, activities and
 ### getVectorStdMean
-This functions receives the path of the text file with name of the variables and returns a vector with the positions and the text of those positions of the meassures that are means or standard variations.
+This functions receives the path of the text file with name of the variables and returns a vector with the positions and the text of those positions of the measures that are means or standard variations.
 The function:
-1. Stores the text file with the column names on a dataframe
+1. Stores the text file with the column names on a data-frame
 2. Creates a vector with the positions of the means and standard variations
 3. Creates a vector with the complete names of the means and standard variations
 4. Returns them after increasing the positions in 2 as the dataset of the previous function has added the subject and activity columns.
 
-*NOTE: The meanFreqs meassures have been discarded as they are not pure means*
+*NOTE: The meanFreqs measures have been discarded as they are not pure means*
 ### run_analysis
 Main function of the script. It receives the path where the users wants to store the resulting tidy data set.
 The function:
@@ -52,7 +52,7 @@ The function:
 4. Gets the positions and the name of those positions with the function **getVectorStdMean**
 5. Extracts those columns from the merged dataset and stores them on a new one. (see step 2 of **GOAL** section)
 6. Renames the columns of the dataset with the names obtained on step 4 after removing special characters not allowed on tidy data.(see step 4 of **GOAL** section)
-7. Groups the dataset by *Subject* and *Activity*, aggregating the meassures by *mean* function and stores them in the final data set.
+7. Groups the dataset by *Subject* and *Activity*, aggregating the measures by *mean* function and stores them in the final data set.
 8. It writes the dataset in the text file passed as parameter (see step 5 of **GOAL** section)
 
 
