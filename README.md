@@ -21,7 +21,8 @@ The project contains 5 steps to comply:
 * Copy **run_analysis.R** on your working folder.
 ### Code to execute
 * Run: 
-```source('run_analysis.R'); run_analysis("*filename*")```
+```[R]source('run_analysis.R')
+      run_analysis("*filename*")```
 
 *filename: It's the name of the txt file with resulting dataset
 
