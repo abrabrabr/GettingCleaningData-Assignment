@@ -47,7 +47,7 @@ get_cols_var = function (colDf, var)
 getVectorStdMean = function (colTxt, colNames) {
       ### Loading txt file on a dataset
       colDf = read.table(colTxt, stringsAsFactors = F)
-      ### Getting vectors for mean and standard variation
+      ### Getting vectors for mean and standard variation, discarding the meanFreq ones
       meanStdCols = grep("mean|std", colDf[grep("Freq", colDf[, 2], invert = T), 2])
       colNames <<-
             grep("mean|std", colDf[grep("Freq", colDf[, 2], invert = T), 2], value = T)
