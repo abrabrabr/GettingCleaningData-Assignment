@@ -53,7 +53,7 @@ The function:
 5. Extracts those columns from the merged dataset and stores them on a new one. (see step 2 of **GOAL** section)
 6. Renames the columns of the dataset with the names obtained on step 4 after removing special characters not allowed on tidy data.(see step 4 of **GOAL** section)
 7. Groups the dataset by *Subject* and *Activity*, aggregating the meassures by *mean* function and stores them in the final data set.
-8. It writes the dataset in the text file passed as parameter
+8. It writes the dataset in the text file passed as parameter (see step 5 of **GOAL** section)
 
 
 
