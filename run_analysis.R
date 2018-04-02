@@ -36,11 +36,6 @@ get_and_join_files = function (mainTxt,
       ### Returning the final data set of training or testing
       result
 }
-### Returns a vector with the column number that contains the var parameter
-get_cols_var = function (colDf, var)
-{
-      vectorCol = grep(var, colDf[, 2])
-}
 
 ### Returns the columns' vector of variables that are mean and standard variations
 
