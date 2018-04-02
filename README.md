@@ -22,6 +22,7 @@ The project contains 5 steps to comply:
 ### Code to execute
 * Run: 
 ``` [R]source('run_analysis.R');run_analysis("*filename*")```
+
 *filename: It's the name of the txt file with resulting dataset*
 
 ## run_analysis.R STRUCTURE
@@ -40,5 +41,6 @@ The function
 2. Creates a vector with the positions of the means and standard variations
 3. Creates a vector with the complete names of the means and standard variations
 4. Returns them after increasing the positions in 2 as the dataset of the previous function has added the subject and activity columns.
+
 *(NOTE: The meanFreqs meassures have been discarded as they are not pure means) *
 
