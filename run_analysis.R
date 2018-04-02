@@ -86,5 +86,5 @@ run_analysis = function (dataSetTxt) {
       ### The dataset with the means and standard variations is grouped by Subject and activity and finally the average of every measure for every group is obtained
       finalSet = meanStdSet %>% group_by(Subject, Activity) %>% summarise_all (funs(mean))
       ###Writing the dataSet on a text file
-      write.table(finalSet,dataSetTxt)
+      write.table(finalSet,dataSetTxt, row.name=FALSE)
 }
