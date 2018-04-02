@@ -50,6 +50,23 @@ getVectorStdMean = function (colTxt, colNames) {
       meanstdCols = meanStdCols + 2
       
 }
+### Return the names of the column that complies better with tidy data standards
+### removing non-characters symbols and improving the reading of them extending
+### the name sif necessary
+getTidyNames = function (namesCol){
+      namesCol = gsub("\\()","",namesCol)
+      namesCol = gsub("-","",namesCol)
+      namesCol = gsub("std","StdDev",namesCol)
+      namesCol = gsub("mean","Mean",namesCol)
+      namesCol = gsub("^(t)","time",namesCol)
+      namesCol = gsub("^(f)","freq",namesCol)
+      namesCol = gsub("(gravity)","Gravity",namesCol)
+      namesCol = gsub("([Bb]ody[Bb]ody|[Bb]ody)","Body",namesCol)
+      namesCol <- gsub("gyro","Gyro",namesCol)
+      namesCol <- gsub("acc","Acc",namesCol)
+      namesCol <- gsub("jerk","Jerk",namesCol)
+      namesCol <- gsub("Mag","Magnitude",namesCol)
+}
 run_analysis = function (dataSetTxt) {
       ### Getting the train and text files and loading both data sets that will be joined later.
       testDf = get_and_join_files(
@@ -76,7 +93,7 @@ run_analysis = function (dataSetTxt) {
       meanStdSet =  select(totalSet, colVectorSelect)
       ### 4. Appropriately labels the data set with descriptive variable names.
       ###Renaming columns with the  Description obtained for std/mean vector and removing non-variable characters
-      names(meanStdSet) = append(c("Subject", "Activity"), gsub("[()-]", "", colNames))
+      names(meanStdSet) = append(c("Subject", "Activity"),getTidyNames(colNames) )
       ### 5. From the data set in step 4, creates a second, independent tidy data set with the average of each variable for each activity and each subject.
       ### The dataset with the means and standard variations is grouped by Subject and activity and finally the average of every measure for every group is obtained
       finalSet = meanStdSet %>% group_by(Subject, Activity) %>% summarise_all (funs(mean))

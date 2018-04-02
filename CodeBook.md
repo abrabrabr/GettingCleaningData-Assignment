@@ -41,8 +41,7 @@ The function:
 2. Creates a vector with the positions of the means and standard variations
 3. Creates a vector with the complete names of the means and standard variations
 4. Returns them after increasing the positions in 2 as the dataset of the previous function has added the subject and activity columns.
-### getTidyNames
-This function converts the column names to tidy variable names, removing non-character symbols and transforming the variable names to a more readable format.
+
 *NOTE: The meanFreqs measures have been discarded as they are not pure means*
 ### run_analysis
 Main function of the script. It receives the path where the users wants to store the resulting tidy data set.
@@ -52,7 +51,7 @@ The function:
 3. Renames the first two columns as *Subject* and *Activity* in order of eliminating duplicated column names
 4. Gets the positions and the name of those positions with the function **getVectorStdMean**
 5. Extracts those columns from the merged dataset and stores them on a new one. (see step 2 of **GOAL** section)
-6. Renames the columns of the dataset with the names obtained on step 4 after removing special characters not allowed on tidy data and making the variable reading more friendly with the function **getTidyNames**.(see step 4 of **GOAL** section)
+6. Renames the columns of the dataset with the names obtained on step 4 after removing special characters not allowed on tidy data.(see step 4 of **GOAL** section)
 7. Groups the dataset by *Subject* and *Activity*, aggregating the measures by *mean* function and stores them in the final data set.
 8. It writes the dataset in the text file passed as parameter (see step 5 of **GOAL** section)
 
